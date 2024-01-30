@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{%block content %}
+<!-- Pacientes List -->
+<div class="content" style="margin-top: 20px;">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center">
+        Pacientes
+    </div>
+    <div class="panel-body">
+      <div class="dataTable_wrapper">
+        <table class="table table-striped table-bordered table-hover" id="Table">
+          <thead>
+            <tr>
+              <th class="text-center">Paciente</th>
+              <th class="text-center">Hospital</th>
+              <th class="text-center">Idade</th>
+              <th class="text-center">Sexo</th>
+              <th class="text-center">TDP</th>
+              <th class="text-center">PAR</th>
+              <th class="text-center">CS</th>
+              <th class="text-center">ASJ</th>
+              <th class="text-center">ECG</th>
+              <th class="text-center">FCM</th>
+              <th class="text-center">AIE</th>
+              <th class="text-center">DST</th>
+              <th class="text-center">IST</th>
+              <th class="text-center">NVP</th>
+              <th class="text-center">Talassemia</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for paciente in paciente_list %}
+            <tr class="odd gradeX">
+              <td class="text-center">{{ paciente.paciente }}</td>
+              <td class="text-center">{{ paciente.hospital }}</td>
+              <td class="text-center">{{ paciente.idade }}</td>
+              <td class="text-center">{{ paciente.sexo }}</td>
+              <td class="text-center">{{ paciente.TDP }}</td>
+              <td class="text-center">{{ paciente.PAR }}</td>
+              <td class="text-center">{{ paciente.CS }}</td>
+              <td class="text-center">{{ paciente.ASJ }}</td>
+              <td class="text-center">{{ paciente.ECG }}</td>
+              <td class="text-center">{{ paciente.FCM }}</td>
+              <td class="text-center">{{ paciente.AIE }}</td>
+              <td class="text-center">{{ paciente.DST }}</td>
+              <td class="text-center">{{ paciente.IST }}</td>
+              <td class="text-center">{{ paciente.NVP }}</td>
+              <td class="text-center">{{ paciente.talassemia}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('#Table').DataTable( {
+  responsive: true
+} );
+</script>
+{% endblock %}
